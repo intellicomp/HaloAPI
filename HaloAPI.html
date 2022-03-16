@@ -1,0 +1,2267 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="HaloAPI provides a PowerShell wrapper around the Halo API. The module can retrieve and send information to the Halo API.">
+      
+      
+      
+        <meta name="author" content="Mikey O'Toole">
+      
+      
+      <link rel="icon" href="img/HaloAPIIcon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
+    
+    
+      
+        <title>Overview - Halo API</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="green">
+  
+    
+    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#haloapi-module" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Halo API" class="md-header__button md-logo" aria-label="Halo API" data-md-component="logo">
+      
+  <img src="img/HaloAPIIcon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Halo API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="green"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/homotechsual/haloapi/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    homotechsual/haloapi
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="index.html" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="HaloAPI.html" class="md-tabs__link md-tabs__link--active">
+      Overview
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="Connect-HaloAPI.html" class="md-tabs__link">
+      Connect
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="Get-HaloAction.html" class="md-tabs__link">
+        Get
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="New-HaloAction.html" class="md-tabs__link">
+        New
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="Remove-HaloAction.html" class="md-tabs__link">
+        Remove
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="Set-HaloAction.html" class="md-tabs__link">
+        Set
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Halo API" class="md-nav__button md-logo" aria-label="Halo API" data-md-component="logo">
+      
+  <img src="img/HaloAPIIcon.png" alt="logo">
+
+    </a>
+    Halo API
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/homotechsual/haloapi/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    homotechsual/haloapi
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="HaloAPI.html" class="md-nav__link md-nav__link--active">
+        Overview
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#haloapi-cmdlets" class="md-nav__link">
+    HaloAPI Cmdlets
+  </a>
+  
+    <nav class="md-nav" aria-label="HaloAPI Cmdlets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connect-haloapi" class="md-nav__link">
+    Connect-HaloAPI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-haloaction" class="md-nav__link">
+    Get-HaloAction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-haloagent" class="md-nav__link">
+    Get-HaloAgent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-haloappointment" class="md-nav__link">
+    Get-HaloAppointment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-haloasset" class="md-nav__link">
+    Get-HaloAsset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-haloattachment" class="md-nav__link">
+    Get-HaloAttachment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-haloclient" class="md-nav__link">
+    Get-HaloClient
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-halocontract" class="md-nav__link">
+    Get-HaloContract
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-halocustombutton" class="md-nav__link">
+    Get-HaloCustomButton
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-halofield" class="md-nav__link">
+    Get-HaloField
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-haloinvoice" class="md-nav__link">
+    Get-HaloInvoice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-haloitem" class="md-nav__link">
+    Get-HaloItem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-halokbarticle" class="md-nav__link">
+    Get-HaloKBArticle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-halolookup" class="md-nav__link">
+    Get-HaloLookup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-haloobjecttemplate" class="md-nav__link">
+    Get-HaloObjectTemplate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-haloopportunity" class="md-nav__link">
+    Get-HaloOpportunity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-haloproject" class="md-nav__link">
+    Get-HaloProject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-halopurchaseorder" class="md-nav__link">
+    Get-HaloPurchaseOrder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-haloquote" class="md-nav__link">
+    Get-HaloQuote
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-halorelease" class="md-nav__link">
+    Get-HaloRelease
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-haloreport" class="md-nav__link">
+    Get-HaloReport
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-halosalesorder" class="md-nav__link">
+    Get-HaloSalesOrder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-haloservice" class="md-nav__link">
+    Get-HaloService
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-halosite" class="md-nav__link">
+    Get-HaloSite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-halostatus" class="md-nav__link">
+    Get-HaloStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-halosupplier" class="md-nav__link">
+    Get-HaloSupplier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-haloteam" class="md-nav__link">
+    Get-HaloTeam
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-haloticket" class="md-nav__link">
+    Get-HaloTicket
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-halotickettype" class="md-nav__link">
+    Get-HaloTicketType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-halotimesheet" class="md-nav__link">
+    Get-HaloTimesheet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-halouser" class="md-nav__link">
+    Get-HaloUser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-haloaction" class="md-nav__link">
+    New-HaloAction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-haloagent" class="md-nav__link">
+    New-HaloAgent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-haloappointment" class="md-nav__link">
+    New-HaloAppointment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-haloasset" class="md-nav__link">
+    New-HaloAsset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-haloattachment" class="md-nav__link">
+    New-HaloAttachment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-haloclient" class="md-nav__link">
+    New-HaloClient
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-halocontract" class="md-nav__link">
+    New-HaloContract
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-haloinvoice" class="md-nav__link">
+    New-HaloInvoice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-haloitem" class="md-nav__link">
+    New-HaloItem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-halokbarticle" class="md-nav__link">
+    New-HaloKBArticle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-haloopportunity" class="md-nav__link">
+    New-HaloOpportunity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-haloproject" class="md-nav__link">
+    New-HaloProject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-haloquote" class="md-nav__link">
+    New-HaloQuote
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-haloreport" class="md-nav__link">
+    New-HaloReport
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-halosite" class="md-nav__link">
+    New-HaloSite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-halostatus" class="md-nav__link">
+    New-HaloStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-halosupplier" class="md-nav__link">
+    New-HaloSupplier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-haloteam" class="md-nav__link">
+    New-HaloTeam
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-haloticket" class="md-nav__link">
+    New-HaloTicket
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-halotickettype" class="md-nav__link">
+    New-HaloTicketType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-halouser" class="md-nav__link">
+    New-HaloUser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-haloaction" class="md-nav__link">
+    Remove-HaloAction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-haloclient" class="md-nav__link">
+    Remove-HaloClient
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-haloticket" class="md-nav__link">
+    Remove-HaloTicket
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-haloaction" class="md-nav__link">
+    Set-HaloAction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-haloagent" class="md-nav__link">
+    Set-HaloAgent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-haloappointment" class="md-nav__link">
+    Set-HaloAppointment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-haloasset" class="md-nav__link">
+    Set-HaloAsset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-haloattachment" class="md-nav__link">
+    Set-HaloAttachment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-haloclient" class="md-nav__link">
+    Set-HaloClient
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-halocontract" class="md-nav__link">
+    Set-HaloContract
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-haloinvoice" class="md-nav__link">
+    Set-HaloInvoice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-haloitem" class="md-nav__link">
+    Set-HaloItem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-halokbarticle" class="md-nav__link">
+    Set-HaloKBArticle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-haloopportunity" class="md-nav__link">
+    Set-HaloOpportunity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-haloproject" class="md-nav__link">
+    Set-HaloProject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-haloquote" class="md-nav__link">
+    Set-HaloQuote
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-haloreport" class="md-nav__link">
+    Set-HaloReport
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-halosite" class="md-nav__link">
+    Set-HaloSite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-halostatus" class="md-nav__link">
+    Set-HaloStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-halosupplier" class="md-nav__link">
+    Set-HaloSupplier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-haloteam" class="md-nav__link">
+    Set-HaloTeam
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-haloticket" class="md-nav__link">
+    Set-HaloTicket
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-halotickettype" class="md-nav__link">
+    Set-HaloTicketType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-halouser" class="md-nav__link">
+    Set-HaloUser
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Connect-HaloAPI.html" class="md-nav__link">
+        Connect
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Get
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Get" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Get
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloAction.html" class="md-nav__link">
+        Action
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloAgent.html" class="md-nav__link">
+        Agent
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloAppointment.html" class="md-nav__link">
+        Appointment
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloAsset.html" class="md-nav__link">
+        Asset
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloAttachment.html" class="md-nav__link">
+        Attachment
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloClient.html" class="md-nav__link">
+        Client
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloContract.html" class="md-nav__link">
+        Contract
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloCustomButton.html" class="md-nav__link">
+        Custom Button
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloField.html" class="md-nav__link">
+        Field
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloInvoice.html" class="md-nav__link">
+        Invoice
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloItem.html" class="md-nav__link">
+        Item
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloKBArticle.html" class="md-nav__link">
+        KB Article
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloLookup.html" class="md-nav__link">
+        Lookup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloObjectTemplate.html" class="md-nav__link">
+        Object Template
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloOpportunity.html" class="md-nav__link">
+        Opportunity
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloProject.html" class="md-nav__link">
+        Project
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloPurchaseOrder.html" class="md-nav__link">
+        Purchase Order
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloQuote.html" class="md-nav__link">
+        Quote
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloRelease.html" class="md-nav__link">
+        Release
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloReport.html" class="md-nav__link">
+        Report
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloSalesOrder.html" class="md-nav__link">
+        Sales Order
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloService.html" class="md-nav__link">
+        Service
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloSite.html" class="md-nav__link">
+        Site
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloStatus.html" class="md-nav__link">
+        Status
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloSupplier.html" class="md-nav__link">
+        Supplier
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloTeam.html" class="md-nav__link">
+        Team
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloTicket.html" class="md-nav__link">
+        Ticket
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloTicketType.html" class="md-nav__link">
+        Ticket Type
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloTimesheet.html" class="md-nav__link">
+        Timesheet
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Get-HaloUser.html" class="md-nav__link">
+        User
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        New
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="New" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          New
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="New-HaloAction.html" class="md-nav__link">
+        Action
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="New-HaloAgent.html" class="md-nav__link">
+        Agent
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="New-HaloAppointment.html" class="md-nav__link">
+        Appointment
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="New-HaloAsset.html" class="md-nav__link">
+        Asset
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="New-HaloAttachment.html" class="md-nav__link">
+        Attachment
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="New-HaloClient.html" class="md-nav__link">
+        Client
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="New-HaloContract.html" class="md-nav__link">
+        Contract
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="New-HaloInvoice.html" class="md-nav__link">
+        Invoice
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="New-HaloItem.html" class="md-nav__link">
+        Item
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="New-HaloKBArticle.html" class="md-nav__link">
+        KB Article
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="New-HaloOpportunity.html" class="md-nav__link">
+        Opportunity
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="New-HaloProject.html" class="md-nav__link">
+        Project
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="New-HaloQuote.html" class="md-nav__link">
+        Quote
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="New-HaloReport.html" class="md-nav__link">
+        Report
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="New-HaloSite.html" class="md-nav__link">
+        Site
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="New-HaloStatus.html" class="md-nav__link">
+        Status
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="New-HaloSupplier.html" class="md-nav__link">
+        Supplier
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="New-HaloTeam.html" class="md-nav__link">
+        Team
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="New-HaloTicket.html" class="md-nav__link">
+        Ticket
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="New-HaloTicketType.html" class="md-nav__link">
+        Ticket Type
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="New-HaloUser.html" class="md-nav__link">
+        User
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Remove
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Remove" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Remove
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Remove-HaloAction.html" class="md-nav__link">
+        Action
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Remove-HaloClient.html" class="md-nav__link">
+        Client
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Remove-HaloTicket.html" class="md-nav__link">
+        Ticket
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Set
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Set" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Set
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Set-HaloAction.html" class="md-nav__link">
+        Action
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Set-HaloAgent.html" class="md-nav__link">
+        Agent
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Set-HaloAppointment.html" class="md-nav__link">
+        Appointment
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Set-HaloAsset.html" class="md-nav__link">
+        Asset
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Set-HaloAttachment.html" class="md-nav__link">
+        Attachment
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Set-HaloClient.html" class="md-nav__link">
+        Client
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Set-HaloContract.html" class="md-nav__link">
+        Contract
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Set-HaloInvoice.html" class="md-nav__link">
+        Invoice
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Set-HaloItem.html" class="md-nav__link">
+        Item
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Set-HaloKBArticle.html" class="md-nav__link">
+        KB Article
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Set-HaloOpportunity.html" class="md-nav__link">
+        Opportunity
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Set-HaloProject.html" class="md-nav__link">
+        Project
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Set-HaloQuote.html" class="md-nav__link">
+        Quote
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Set-HaloReport.html" class="md-nav__link">
+        Report
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Set-HaloSite.html" class="md-nav__link">
+        Site
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Set-HaloStatus.html" class="md-nav__link">
+        Status
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Set-HaloSupplier.html" class="md-nav__link">
+        Supplier
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Set-HaloTeam.html" class="md-nav__link">
+        Team
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Set-HaloTicket.html" class="md-nav__link">
+        Ticket
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Set-HaloTicketType.html" class="md-nav__link">
+        Ticket Type
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Set-HaloUser.html" class="md-nav__link">
+        User
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/homotechsual/haloapi/edit/master/docs/HaloAPI.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="haloapi-module">HaloAPI Module<a class="headerlink" href="#haloapi-module" title="Permanent link">&para;</a></h1>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p>HaloAPI provides a PowerShell wrapper around the Halo API, tested extensively against HaloPSA instances only (please test against HaloISM or HaloServiceDesk instances and let us know how it works). The module can retrieve and send information to the Halo API.</p>
+<h2 id="haloapi-cmdlets">HaloAPI Cmdlets<a class="headerlink" href="#haloapi-cmdlets" title="Permanent link">&para;</a></h2>
+<h3 id="connect-haloapi"><a href="Connect-HaloAPI.html">Connect-HaloAPI</a><a class="headerlink" href="#connect-haloapi" title="Permanent link">&para;</a></h3>
+<p>Creates a new connection to a Halo instance.</p>
+<h3 id="get-haloaction"><a href="Get-HaloAction.html">Get-HaloAction</a><a class="headerlink" href="#get-haloaction" title="Permanent link">&para;</a></h3>
+<p>Gets actions from the Halo API.</p>
+<h3 id="get-haloagent"><a href="Get-HaloAgent.html">Get-HaloAgent</a><a class="headerlink" href="#get-haloagent" title="Permanent link">&para;</a></h3>
+<p>Gets agents from the Halo API.</p>
+<h3 id="get-haloappointment"><a href="Get-HaloAppointment.html">Get-HaloAppointment</a><a class="headerlink" href="#get-haloappointment" title="Permanent link">&para;</a></h3>
+<p>Gets appointments from the Halo API.</p>
+<h3 id="get-haloasset"><a href="Get-HaloAsset.html">Get-HaloAsset</a><a class="headerlink" href="#get-haloasset" title="Permanent link">&para;</a></h3>
+<p>Gets assets from the Halo API.</p>
+<h3 id="get-haloattachment"><a href="Get-HaloAttachment.html">Get-HaloAttachment</a><a class="headerlink" href="#get-haloattachment" title="Permanent link">&para;</a></h3>
+<p>Gets attachments from the Halo API.</p>
+<h3 id="get-haloclient"><a href="Get-HaloClient.html">Get-HaloClient</a><a class="headerlink" href="#get-haloclient" title="Permanent link">&para;</a></h3>
+<p>Gets clients from the Halo API.</p>
+<h3 id="get-halocontract"><a href="Get-HaloContract.html">Get-HaloContract</a><a class="headerlink" href="#get-halocontract" title="Permanent link">&para;</a></h3>
+<p>Gets contracts from the Halo API.</p>
+<h3 id="get-halocustombutton"><a href="Get-HaloCustomButton.html">Get-HaloCustomButton</a><a class="headerlink" href="#get-halocustombutton" title="Permanent link">&para;</a></h3>
+<p>Gets custom buttons from the Halo API.</p>
+<h3 id="get-halofield"><a href="Get-HaloField.html">Get-HaloField</a><a class="headerlink" href="#get-halofield" title="Permanent link">&para;</a></h3>
+<p>Gets field information from the Halo API.</p>
+<h3 id="get-haloinvoice"><a href="Get-HaloInvoice.html">Get-HaloInvoice</a><a class="headerlink" href="#get-haloinvoice" title="Permanent link">&para;</a></h3>
+<p>Gets invoices from the Halo API.</p>
+<h3 id="get-haloitem"><a href="Get-HaloItem.html">Get-HaloItem</a><a class="headerlink" href="#get-haloitem" title="Permanent link">&para;</a></h3>
+<p>Gets items from the Halo API.</p>
+<h3 id="get-halokbarticle"><a href="Get-HaloKBArticle.html">Get-HaloKBArticle</a><a class="headerlink" href="#get-halokbarticle" title="Permanent link">&para;</a></h3>
+<p>Gets knowledgebase articles from the Halo API.</p>
+<h3 id="get-halolookup"><a href="Get-HaloLookup.html">Get-HaloLookup</a><a class="headerlink" href="#get-halolookup" title="Permanent link">&para;</a></h3>
+<p>Gets lookup information from the Halo API.</p>
+<h3 id="get-haloobjecttemplate"><a href="Get-HaloObjectTemplate.html">Get-HaloObjectTemplate</a><a class="headerlink" href="#get-haloobjecttemplate" title="Permanent link">&para;</a></h3>
+<p>Gets an object template for the Halo API.</p>
+<h3 id="get-haloopportunity"><a href="Get-HaloOpportunity.html">Get-HaloOpportunity</a><a class="headerlink" href="#get-haloopportunity" title="Permanent link">&para;</a></h3>
+<p>Gets opportunities from the Halo API.</p>
+<h3 id="get-haloproject"><a href="Get-HaloProject.html">Get-HaloProject</a><a class="headerlink" href="#get-haloproject" title="Permanent link">&para;</a></h3>
+<p>Gets projects from the Halo API.</p>
+<h3 id="get-halopurchaseorder"><a href="Get-HaloPurchaseOrder.html">Get-HaloPurchaseOrder</a><a class="headerlink" href="#get-halopurchaseorder" title="Permanent link">&para;</a></h3>
+<p>Gets purchase orders from the Halo API.</p>
+<h3 id="get-haloquote"><a href="Get-HaloQuote.html">Get-HaloQuote</a><a class="headerlink" href="#get-haloquote" title="Permanent link">&para;</a></h3>
+<p>Gets quotes from the Halo API.</p>
+<h3 id="get-halorelease"><a href="Get-HaloRelease.html">Get-HaloRelease</a><a class="headerlink" href="#get-halorelease" title="Permanent link">&para;</a></h3>
+<p>Gets software releases from the Halo API.</p>
+<h3 id="get-haloreport"><a href="Get-HaloReport.html">Get-HaloReport</a><a class="headerlink" href="#get-haloreport" title="Permanent link">&para;</a></h3>
+<p>Gets reports from the Halo API.</p>
+<h3 id="get-halosalesorder"><a href="Get-HaloSalesOrder.html">Get-HaloSalesOrder</a><a class="headerlink" href="#get-halosalesorder" title="Permanent link">&para;</a></h3>
+<p>Gets sales orders from the Halo API.</p>
+<h3 id="get-haloservice"><a href="Get-HaloService.html">Get-HaloService</a><a class="headerlink" href="#get-haloservice" title="Permanent link">&para;</a></h3>
+<p>Gets services from the Halo API.</p>
+<h3 id="get-halosite"><a href="Get-HaloSite.html">Get-HaloSite</a><a class="headerlink" href="#get-halosite" title="Permanent link">&para;</a></h3>
+<p>Gets sites from the Halo API.</p>
+<h3 id="get-halostatus"><a href="Get-HaloStatus.html">Get-HaloStatus</a><a class="headerlink" href="#get-halostatus" title="Permanent link">&para;</a></h3>
+<p>Gets statuses from the Halo API.</p>
+<h3 id="get-halosupplier"><a href="Get-HaloSupplier.html">Get-HaloSupplier</a><a class="headerlink" href="#get-halosupplier" title="Permanent link">&para;</a></h3>
+<p>Gets suppliers from the Halo API.</p>
+<h3 id="get-haloteam"><a href="Get-HaloTeam.html">Get-HaloTeam</a><a class="headerlink" href="#get-haloteam" title="Permanent link">&para;</a></h3>
+<p>Gets teams from the Halo API.</p>
+<h3 id="get-haloticket"><a href="Get-HaloTicket.html">Get-HaloTicket</a><a class="headerlink" href="#get-haloticket" title="Permanent link">&para;</a></h3>
+<p>Gets tickets from the Halo API.</p>
+<h3 id="get-halotickettype"><a href="Get-HaloTicketType.html">Get-HaloTicketType</a><a class="headerlink" href="#get-halotickettype" title="Permanent link">&para;</a></h3>
+<p>Gets ticket types from the Halo API.</p>
+<h3 id="get-halotimesheet"><a href="Get-HaloTimesheet.html">Get-HaloTimesheet</a><a class="headerlink" href="#get-halotimesheet" title="Permanent link">&para;</a></h3>
+<p>Gets timesheets from the Halo API.</p>
+<h3 id="get-halouser"><a href="Get-HaloUser.html">Get-HaloUser</a><a class="headerlink" href="#get-halouser" title="Permanent link">&para;</a></h3>
+<p>Gets users from the Halo API.</p>
+<h3 id="new-haloaction"><a href="New-HaloAction.html">New-HaloAction</a><a class="headerlink" href="#new-haloaction" title="Permanent link">&para;</a></h3>
+<p>Creates an action via the Halo API.</p>
+<h3 id="new-haloagent"><a href="New-HaloAgent.html">New-HaloAgent</a><a class="headerlink" href="#new-haloagent" title="Permanent link">&para;</a></h3>
+<p>Creates an agent via the Halo API.</p>
+<h3 id="new-haloappointment"><a href="New-HaloAppointment.html">New-HaloAppointment</a><a class="headerlink" href="#new-haloappointment" title="Permanent link">&para;</a></h3>
+<p>Creates an appointment via the Halo API.</p>
+<h3 id="new-haloasset"><a href="New-HaloAsset.html">New-HaloAsset</a><a class="headerlink" href="#new-haloasset" title="Permanent link">&para;</a></h3>
+<p>Creates an asset via the Halo API.</p>
+<h3 id="new-haloattachment"><a href="New-HaloAttachment.html">New-HaloAttachment</a><a class="headerlink" href="#new-haloattachment" title="Permanent link">&para;</a></h3>
+<p>Creates an attachment via the Halo API.</p>
+<h3 id="new-haloclient"><a href="New-HaloClient.html">New-HaloClient</a><a class="headerlink" href="#new-haloclient" title="Permanent link">&para;</a></h3>
+<p>Creates a client via the Halo API.</p>
+<h3 id="new-halocontract"><a href="New-HaloContract.html">New-HaloContract</a><a class="headerlink" href="#new-halocontract" title="Permanent link">&para;</a></h3>
+<p>Updates a contract via the Halo API.</p>
+<h3 id="new-haloinvoice"><a href="New-HaloInvoice.html">New-HaloInvoice</a><a class="headerlink" href="#new-haloinvoice" title="Permanent link">&para;</a></h3>
+<p>Creates an invoice via the Halo API.</p>
+<h3 id="new-haloitem"><a href="New-HaloItem.html">New-HaloItem</a><a class="headerlink" href="#new-haloitem" title="Permanent link">&para;</a></h3>
+<p>Creates an item via the Halo API.</p>
+<h3 id="new-halokbarticle"><a href="New-HaloKBArticle.html">New-HaloKBArticle</a><a class="headerlink" href="#new-halokbarticle" title="Permanent link">&para;</a></h3>
+<p>Creates a knowledgebase article via the Halo API.</p>
+<h3 id="new-haloopportunity"><a href="New-HaloOpportunity.html">New-HaloOpportunity</a><a class="headerlink" href="#new-haloopportunity" title="Permanent link">&para;</a></h3>
+<p>Creates an opportunity via the Halo API.</p>
+<h3 id="new-haloproject"><a href="New-HaloProject.html">New-HaloProject</a><a class="headerlink" href="#new-haloproject" title="Permanent link">&para;</a></h3>
+<p>Creates a project via the Halo API.</p>
+<h3 id="new-haloquote"><a href="New-HaloQuote.html">New-HaloQuote</a><a class="headerlink" href="#new-haloquote" title="Permanent link">&para;</a></h3>
+<p>Creates a quote via the Halo API.</p>
+<h3 id="new-haloreport"><a href="New-HaloReport.html">New-HaloReport</a><a class="headerlink" href="#new-haloreport" title="Permanent link">&para;</a></h3>
+<p>Creates a report via the Halo API.</p>
+<h3 id="new-halosite"><a href="New-HaloSite.html">New-HaloSite</a><a class="headerlink" href="#new-halosite" title="Permanent link">&para;</a></h3>
+<p>Creates a site via the Halo API.</p>
+<h3 id="new-halostatus"><a href="New-HaloStatus.html">New-HaloStatus</a><a class="headerlink" href="#new-halostatus" title="Permanent link">&para;</a></h3>
+<p>Creates a status via the Halo API.</p>
+<h3 id="new-halosupplier"><a href="New-HaloSupplier.html">New-HaloSupplier</a><a class="headerlink" href="#new-halosupplier" title="Permanent link">&para;</a></h3>
+<p>Creates a supplier via the Halo API.</p>
+<h3 id="new-haloteam"><a href="New-HaloTeam.html">New-HaloTeam</a><a class="headerlink" href="#new-haloteam" title="Permanent link">&para;</a></h3>
+<p>Creates a team via the Halo API.</p>
+<h3 id="new-haloticket"><a href="New-HaloTicket.html">New-HaloTicket</a><a class="headerlink" href="#new-haloticket" title="Permanent link">&para;</a></h3>
+<p>Creates a ticket via the Halo API.</p>
+<h3 id="new-halotickettype"><a href="New-HaloTicketType.html">New-HaloTicketType</a><a class="headerlink" href="#new-halotickettype" title="Permanent link">&para;</a></h3>
+<p>Creates a ticket type via the Halo API.</p>
+<h3 id="new-halouser"><a href="New-HaloUser.html">New-HaloUser</a><a class="headerlink" href="#new-halouser" title="Permanent link">&para;</a></h3>
+<p>Creates a user via the Halo API.</p>
+<h3 id="remove-haloaction"><a href="Remove-HaloAction.html">Remove-HaloAction</a><a class="headerlink" href="#remove-haloaction" title="Permanent link">&para;</a></h3>
+<p>Removes an action from the Halo API.</p>
+<h3 id="remove-haloclient"><a href="Remove-HaloClient.html">Remove-HaloClient</a><a class="headerlink" href="#remove-haloclient" title="Permanent link">&para;</a></h3>
+<p>Removes a client from the Halo API.</p>
+<h3 id="remove-haloticket"><a href="Remove-HaloTicket.html">Remove-HaloTicket</a><a class="headerlink" href="#remove-haloticket" title="Permanent link">&para;</a></h3>
+<p>Removes a ticket from the Halo API.</p>
+<h3 id="set-haloaction"><a href="Set-HaloAction.html">Set-HaloAction</a><a class="headerlink" href="#set-haloaction" title="Permanent link">&para;</a></h3>
+<p>Updates an action via the Halo API.</p>
+<h3 id="set-haloagent"><a href="Set-HaloAgent.html">Set-HaloAgent</a><a class="headerlink" href="#set-haloagent" title="Permanent link">&para;</a></h3>
+<p>Updates an agent via the Halo API.</p>
+<h3 id="set-haloappointment"><a href="Set-HaloAppointment.html">Set-HaloAppointment</a><a class="headerlink" href="#set-haloappointment" title="Permanent link">&para;</a></h3>
+<p>Updates an appointment via the Halo API.</p>
+<h3 id="set-haloasset"><a href="Set-HaloAsset.html">Set-HaloAsset</a><a class="headerlink" href="#set-haloasset" title="Permanent link">&para;</a></h3>
+<p>Updates an asset via the Halo API.</p>
+<h3 id="set-haloattachment"><a href="Set-HaloAttachment.html">Set-HaloAttachment</a><a class="headerlink" href="#set-haloattachment" title="Permanent link">&para;</a></h3>
+<p>Updates an attachment via the Halo API.</p>
+<h3 id="set-haloclient"><a href="Set-HaloClient.html">Set-HaloClient</a><a class="headerlink" href="#set-haloclient" title="Permanent link">&para;</a></h3>
+<p>Updates a client via the Halo API.</p>
+<h3 id="set-halocontract"><a href="Set-HaloContract.html">Set-HaloContract</a><a class="headerlink" href="#set-halocontract" title="Permanent link">&para;</a></h3>
+<p>Updates a contract via the Halo API.</p>
+<h3 id="set-haloinvoice"><a href="Set-HaloInvoice.html">Set-HaloInvoice</a><a class="headerlink" href="#set-haloinvoice" title="Permanent link">&para;</a></h3>
+<p>Updates an invoice via the Halo API.</p>
+<h3 id="set-haloitem"><a href="Set-HaloItem.html">Set-HaloItem</a><a class="headerlink" href="#set-haloitem" title="Permanent link">&para;</a></h3>
+<p>Updates an item via the Halo API.</p>
+<h3 id="set-halokbarticle"><a href="Set-HaloKBArticle.html">Set-HaloKBArticle</a><a class="headerlink" href="#set-halokbarticle" title="Permanent link">&para;</a></h3>
+<p>Updates a knowledgebase article via the Halo API.</p>
+<h3 id="set-haloopportunity"><a href="Set-HaloOpportunity.html">Set-HaloOpportunity</a><a class="headerlink" href="#set-haloopportunity" title="Permanent link">&para;</a></h3>
+<p>Updates an opportunity via the Halo API.</p>
+<h3 id="set-haloproject"><a href="Set-HaloProject.html">Set-HaloProject</a><a class="headerlink" href="#set-haloproject" title="Permanent link">&para;</a></h3>
+<p>Updates a project via the Halo API.</p>
+<h3 id="set-haloquote"><a href="Set-HaloQuote.html">Set-HaloQuote</a><a class="headerlink" href="#set-haloquote" title="Permanent link">&para;</a></h3>
+<p>Updates a quote via the Halo API.</p>
+<h3 id="set-haloreport"><a href="Set-HaloReport.html">Set-HaloReport</a><a class="headerlink" href="#set-haloreport" title="Permanent link">&para;</a></h3>
+<p>Updates a report via the Halo API.</p>
+<h3 id="set-halosite"><a href="Set-HaloSite.html">Set-HaloSite</a><a class="headerlink" href="#set-halosite" title="Permanent link">&para;</a></h3>
+<p>Updates a site via the Halo API.</p>
+<h3 id="set-halostatus"><a href="Set-HaloStatus.html">Set-HaloStatus</a><a class="headerlink" href="#set-halostatus" title="Permanent link">&para;</a></h3>
+<p>Updates a status via the Halo API.</p>
+<h3 id="set-halosupplier"><a href="Set-HaloSupplier.html">Set-HaloSupplier</a><a class="headerlink" href="#set-halosupplier" title="Permanent link">&para;</a></h3>
+<p>Updates a supplier via the Halo API.</p>
+<h3 id="set-haloteam"><a href="Set-HaloTeam.html">Set-HaloTeam</a><a class="headerlink" href="#set-haloteam" title="Permanent link">&para;</a></h3>
+<p>Updates a team via the Halo API.</p>
+<h3 id="set-haloticket"><a href="Set-HaloTicket.html">Set-HaloTicket</a><a class="headerlink" href="#set-haloticket" title="Permanent link">&para;</a></h3>
+<p>Updates a ticket via the Halo API.</p>
+<h3 id="set-halotickettype"><a href="Set-HaloTicketType.html">Set-HaloTicketType</a><a class="headerlink" href="#set-halotickettype" title="Permanent link">&para;</a></h3>
+<p>Updates a ticket type via the Halo API.</p>
+<h3 id="set-halouser"><a href="Set-HaloUser.html">Set-HaloUser</a><a class="headerlink" href="#set-halouser" title="Permanent link">&para;</a></h3>
+<p>Updates a user via the Halo API.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Home
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="Connect-HaloAPI.html" class="md-footer__link md-footer__link--next" aria-label="Next: Connect" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Connect
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 Mikey O'Toole &amp; Luke Whitelock
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/homotechsual" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/homotechsual/haloapi" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.82b56eb2.min.js"></script>
+      
+    
+  </body>
+</html>
